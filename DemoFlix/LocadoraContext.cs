@@ -10,6 +10,7 @@ namespace DemoFlix
     public class LocadoraContext : DbContext
     {
         public DbSet<Serie> Series { get; set; }
+        public DbSet<Filme> Filmes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

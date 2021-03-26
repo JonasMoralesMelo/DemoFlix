@@ -3,14 +3,16 @@ using DemoFlix;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoFlix.Migrations
 {
     [DbContext(typeof(LocadoraContext))]
-    partial class LocadouraContextModelSnapshot : ModelSnapshot
+    [Migration("20210326173527_Add_Novas_Propriedades_TB_Filmes")]
+    partial class Add_Novas_Propriedades_TB_Filmes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

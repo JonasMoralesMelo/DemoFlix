@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace DemoFlix.Model
 {
-    public class Serie : EntidadeBase
+    public class Filme : EntidadeBase
     {
         public Genero Genero { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public int Ano { get; set; }
-        public Serie(Genero genero, string titulo, string descricao)
-        {
-            this.Genero = genero;
-            this.Titulo = titulo;
-            this.Descricao = descricao;
-        }
-        
-    }
 
+        public Filme(Genero genero, string titulo, string descricao, int ano)
+        {
+            Genero = genero;
+            Titulo = titulo;
+            Descricao = descricao;
+            Ano = ano;
+        }
+    }
 }

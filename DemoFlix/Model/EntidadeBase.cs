@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DemoFlix.Model
 {
-    public class EntidadeBase
+    public abstract class EntidadeBase
     {
         public int Id { get; set; }
     }
