@@ -14,42 +14,37 @@ namespace DemoFlix.Controllers
     [ApiController]
     public class SerieController : ControllerBase
     {
+        SerieRepositorio repositorio = new SerieRepositorio();
         // GET: api/<SerieController>
         [HttpGet]
         public List<Serie> Get()
         {
-            SerieRepositorio repositorio = new SerieRepositorio();
             return repositorio.Lista();
         }
-
         // GET api/<SerieController>/5
-
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Serie Get(int id)
         {
-            return "value";
+            return repositorio.RetornaPorId(id);
         }
-
         // POST api/<SerieController>
         [HttpPost]
         public List<Serie> Post([FromBody] Serie serie)
-        {
-            SerieRepositorio repositorio = new SerieRepositorio();
+        {            
             repositorio.Insere(serie);
             return repositorio.Lista();
-
         }
-
         // PUT api/<SerieController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Serie serie)
         {
+            repositorio.Atualizar(id,serie);
         }
-
         // DELETE api/<SerieController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            repositorio.Excluir(id);
         }
     }
 }

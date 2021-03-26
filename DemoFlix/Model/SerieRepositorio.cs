@@ -9,21 +9,30 @@ namespace DemoFlix.Model
     public class SerieRepositorio : IRepositorio<Serie>
     {
         private List<Serie> listaSerie = new List<Serie>();
-        private LocadouraContext contexto;
+        private LocadoraContext contexto;
 
         public SerieRepositorio()
         {
-            this.contexto = new LocadouraContext();
+            this.contexto = new LocadoraContext();
         }
 
         public void Atualizar(int id, Serie entidade)
         {
-            throw new NotImplementedException();
+            var serie = contexto.Series.Find(id);
+            serie.Genero = entidade.Genero;
+            serie.Titulo = entidade.Titulo;
+            serie.Descricao = entidade.Descricao;
+           
+            contexto.Series.Update(serie);
+            contexto.SaveChanges();
         }
 
         public void Excluir(int id)
         {
-            throw new NotImplementedException();
+            var serieBD = contexto.Series.Find(id);
+            contexto.Series.Remove(serieBD);
+            contexto.SaveChanges();
+           
         }
 
         public void Insere(Serie serie)
@@ -40,7 +49,7 @@ namespace DemoFlix.Model
 
         public Serie RetornaPorId(int id)
         {
-            throw new NotImplementedException();
+            return contexto.Series.Find(id);
         }
     }
 }

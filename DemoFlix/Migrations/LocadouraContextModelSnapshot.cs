@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoFlix.Migrations
 {
-    [DbContext(typeof(LocadouraContext))]
+    [DbContext(typeof(LocadoraContext))]
     partial class LocadouraContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

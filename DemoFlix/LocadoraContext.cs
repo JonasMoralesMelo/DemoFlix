@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DemoFlix
 {
-    public class LocadouraContext : DbContext
+    public class LocadoraContext : DbContext
     {
         public DbSet<Serie> Series { get; set; }
 

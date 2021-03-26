@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoFlix.Migrations
 {
-    [DbContext(typeof(LocadouraContext))]
+    [DbContext(typeof(LocadoraContext))]
     [Migration("20210325190645_Unidade")]
     partial class Unidade
     {
